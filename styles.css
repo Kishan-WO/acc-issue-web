@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --bg-dark: #0f0f12;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    
+    /* Low contrast text colors intentionally introduced */
+    --text-muted: #555c66; /* Very low contrast against #0f0f12 */
+    --text-gold-low: #cca872; /* Fails contrast when used on light backgrounds */
+    
+    --accent: #d4af37;
+    --accent-glow: rgba(212, 175, 55, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Accessibility issue: Disabling focus outline globally */
+*:focus {
+    outline: none !important;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    width: 90%;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+/* Accessibility violation: Improper heading hierarchy in HTML (H4 then H1 then H5) */
+.hero-subtitle {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+/* Accessibility Violation: Low Contrast text against dark background */
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* Accessibility Violation: Custom div button (no native focus, tabIndex, keyboard support) */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--accent) 0%, #aa841c 100%);
+    color: #000;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px var(--accent-glow);
+}
+
+/* Features Section */
+.features {
+    padding: 8rem 10%;
+    background-color: #0c0c0e;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+/* Glassmorphism Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Accessibility Violation: Low Contrast copy text */
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* Accessibility Violation: Low contrast gold text on a very light background section */
+.promo-banner {
+    background-color: #f7f7f9;
+    color: #1a1a1a;
+    padding: 4rem;
+    border-radius: 24px;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.promo-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Fails contrast guidelines (gold/yellow on light grey/white background) */
+.promo-badge {
+    color: var(--text-gold-low);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.promo-desc {
+    color: #666; /* Marginally acceptable, but bordering low contrast */
+}
+
+/* Contact/Newsletter Section with Form Violations */
+.newsletter {
+    padding: 8rem 10%;
+    text-align: center;
+    background: radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 40%);
+}
+
+.newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Accessibility Violation: Low Contrast text */
+.newsletter p {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+/* Accessibility Violation: Input without label, reliance on placeholder which is also low contrast */
+.form-input {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-input::placeholder {
+    color: #3a3f47; /* Extremely low contrast against dark input background */
+}
+
+/* Accessibility Violation: custom div submit button */
+.submit-btn {
+    padding: 1rem 2rem;
+    background-color: var(--accent);
+    color: #000;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ebd076;
+}
+
+footer {
+    padding: 4rem 10% 2rem;
+    border-top: 1px solid var(--border-glass);
+    text-align: center;
+}
+
+/* Accessibility Violation: Non-descriptive link labels */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.copyright {
+    color: #33373e; /* Low contrast */
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .promo-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .form-group {
+        flex-direction: column;
+        border-radius: 0;
+        gap: 1rem;
+    }
+    .form-input, .submit-btn {
+        width: 100%;
+    }
+}
