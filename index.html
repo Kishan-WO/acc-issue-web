@@ -1,5 +1,6 @@
 <!-- Accessibility Violation: Incorrect or invalid lang attribute -->
 <html lang="zxx-invalid-code">
+
 <head>
     <meta charset="UTF-8">
     <!-- Accessibility / SEO Issue: user-scalable=no blocks browser-level text/zoom scaling -->
@@ -7,6 +8,7 @@
     <title>Aether Café | Luxury Roasters</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <header>
@@ -29,10 +31,11 @@
                 <!-- Accessibility Violation: Bad heading hierarchy, h4 before h1 -->
                 <h4 class="hero-subtitle">The Art of Extraction</h4>
                 <h1>Elevate Your Daily Ritual</h1>
-                
+
                 <!-- Accessibility Violation: Very low contrast text -->
                 <p class="hero-desc">
-                    Experience single-origin beans roasted to perfection, crafted for those who appreciate the finer notes of life.
+                    Experience single-origin beans roasted to perfection, crafted for those who appreciate the finer
+                    notes of life.
                 </p>
 
                 <!-- Accessibility Violation: Div acting as button. Fails keyboard navigation and screen reader semantics -->
@@ -46,42 +49,50 @@
         <section id="about" class="features">
             <!-- Accessibility Violation: Skipping to H2 after H1 is correct, but let's look at the structure below -->
             <h2 class="section-title">Why Aether</h2>
-            
+
             <div class="grid">
                 <!-- Feature 1 -->
                 <div class="card">
                     <!-- Accessibility Violation: Decorative element or structural icon without alt text/aria-hidden -->
                     <!-- We use inline SVG without title or role -->
                     <div class="card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                         </svg>
                     </div>
                     <h3>Ethically Sourced</h3>
-                    <p>We work directly with local farmers across Africa and South America to ensure sustainable practices and fair compensation.</p>
+                    <p>We work directly with local farmers across Africa and South America to ensure sustainable
+                        practices and fair compensation.</p>
                 </div>
 
                 <!-- Feature 2 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                         </svg>
                     </div>
                     <!-- Accessibility Violation: Heading hierarchy skipping levels from H2 to H5 -->
                     <h5>Artisanal Roasting</h5>
-                    <p>Our Master Roasters treat roasting as a science, unlocking the distinct micro-climate notes of every harvest.</p>
+                    <p>Our Master Roasters treat roasting as a science, unlocking the distinct micro-climate notes of
+                        every harvest.</p>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                         </svg>
                     </div>
                     <h3>Precision Brewing</h3>
-                    <p>Designed with meticulous attention to temperature, pressure, and extraction time to deliver unmatched clarity.</p>
+                    <p>Designed with meticulous attention to temperature, pressure, and extraction time to deliver
+                        unmatched clarity.</p>
                 </div>
             </div>
 
@@ -91,16 +102,19 @@
                     <!-- Accessibility Violation: Low contrast gold badge on light background -->
                     <span class="promo-badge">Limited Batch Release</span>
                     <h2>Geisha Limited Reserve</h2>
-                    <p class="promo-desc">Grown in the highlands of Panama, featuring complex floral notes and jasmine aromas.</p>
-                    
+                    <p class="promo-desc">Grown in the highlands of Panama, featuring complex floral notes and jasmine
+                        aromas.</p>
+
                     <!-- Accessibility Violation: Generic non-descriptive link text -->
                     <p style="margin-top: 1.5rem;">
-                        <a href="#reserve" style="color: #1a1a1a; font-weight: 600;">Click here</a> to pre-order yours today.
+                        <a href="#reserve" style="color: #1a1a1a; font-weight: 600;">Click here</a> to pre-order yours
+                        today.
                     </p>
                 </div>
                 <!-- Accessibility Violation: Missing alt attribute completely, or generic alt attribute -->
                 <div class="promo-img">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="image" style="max-width: 100%; border-radius: 12px; height: auto;">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="image"
+                        style="max-width: 100%; border-radius: 12px; height: auto;">
                 </div>
             </div>
         </section>
@@ -115,15 +129,16 @@
             <div class="form-group">
                 <!-- Accessibility Violation: No <label> element or aria-label for the input, placeholder text has very low contrast -->
                 <input type="text" class="form-input" id="email-field" placeholder="Enter your email address...">
-                
+
                 <!-- Accessibility Violation: Div acting as submit button. No role, no keyboard support -->
                 <div class="submit-btn" id="subscribe-btn">
                     Subscribe
                 </div>
             </div>
-            
+
             <!-- Accessibility Violation: Duplicate ID used here again (header-brand-title) -->
-            <div id="header-brand-title" style="margin-top: 1.5rem; color: #ebd076; font-size: 0.95rem; display: none;"></div>
+            <div id="header-brand-title" style="margin-top: 1.5rem; color: #ebd076; font-size: 0.95rem; display: none;">
+            </div>
         </section>
     </main>
 
@@ -137,6 +152,11 @@
         <p class="copyright">&copy; 2026 Aether Café Roasters. All rights reserved.</p>
     </footer>
 
+    <script src="https://staging-widget.guidy.net/v1/assets/static-pages/injector.js" type="module"
+        data-account="mrsy5ioi8t"></script>
+    <script src="https://staging-widget.guidy.net/v1/assets/static-pages/injector.js" type="module"
+        data-account="mrsy5ioi8r"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
