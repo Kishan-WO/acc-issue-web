@@ -1,0 +1,91 @@
+<!-- Accessibility Violation: Incorrect or invalid lang attribute -->
+<html lang="zxx-invalid-code">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Accessibility / SEO Issue: user-scalable=no blocks browser-level text/zoom scaling -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>About Us | Aether Café</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Accessibility Violation: Duplicate ID attribute -->
+      <span class="logo" id="header-brand-title">Aether Café</span>
+      <nav>
+        <ul>
+          <!-- Accessibility Violation: positive tabindex values disrupting natural keyboard flow -->
+          <li><a href="index.html" tabindex="3">Home</a></li>
+          <li><a href="about.html" tabindex="1">About</a></li>
+          <li><a href="menu.html" tabindex="2">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="min-height: 60vh; background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);">
+        <div class="hero-content">
+          <!-- Accessibility Violation: Bad heading hierarchy -->
+          <h4 class="hero-subtitle">Our Heritage</h4>
+          <h1>A Passion For Perfection</h1>
+          <!-- Accessibility Violation: Very low contrast text color (fails WCAG contrast ratio) -->
+          <p class="hero-desc">
+            Founded in 2018, Aether Café was born out of a desire to bridge the gap between traditional roasting methodologies and modern coffee extraction technology.
+          </p>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2 class="section-title">The Roastery Story</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Sourcing</h3>
+            <!-- Accessibility Violation: Low Contrast text -->
+            <p>Our journey begins in the micro-climates of high-altitude farms. We source beans directly to ensure premium quality and sustainability.</p>
+          </div>
+          <div class="card">
+            <h3>Roasting</h3>
+            <!-- Accessibility Violation: Low Contrast text -->
+            <p>Every small batch is roasted in our custom-built fluid bed roasters. We optimize heat and airflow parameters to preserve natural tasting profiles.</p>
+          </div>
+        </div>
+
+        <!-- Light Section with Gold-on-Light Contrast Violation -->
+        <div class="promo-banner">
+          <div class="promo-text">
+            <!-- Accessibility Violation: Low contrast gold text on a very light background -->
+            <span class="promo-badge">The Founder's Philosophy</span>
+            <h2>Crafted, Not Produced</h2>
+            <p class="promo-desc">"Coffee is more than a beverage; it is a ritual of focus and clarity."</p>
+          </div>
+          <div class="promo-img">
+            <!-- Accessibility Violation: Missing alt attribute -->
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400" alt="image" style="max-width: 100%; border-radius: 12px; height: auto;" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <!-- Accessibility Violation: Non-descriptive links -->
+        <a href="#privacy">Read more</a>
+        <a href="#terms">Go</a>
+        <a href="#contact">Click here</a>
+      </div>
+      <p class="copyright">
+        &copy; 2026 Aether Café Roasters. All rights reserved.
+      </p>
+    </footer>
+
+    <script
+      src="http://127.0.0.1:5500/injector.js"
+      type="module"
+      data-account="mrt34cl0ba"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,211 +1,451 @@
 <!-- Accessibility Violation: Incorrect or invalid lang attribute -->
 <html lang="zxx-invalid-code">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Accessibility / SEO Issue: user-scalable=no blocks browser-level text/zoom scaling -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
-    <title>Aether Café | Luxury Roasters</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <!-- Accessibility Violation: Duplicate ID attribute (violates HTML spec, breaks assistive mapping) -->
-      <span class="logo" id="header-brand-title">Aether Café</span>
-      <nav>
-        <ul>
-          <!-- Accessibility Violation: positive tabindex values disrupting natural keyboard flow -->
-          <li><a href="#about" tabindex="3">About</a></li>
-          <li><a href="#menu" tabindex="1">Menu</a></li>
-          <li><a href="#locations" tabindex="2">Locations</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <!-- Accessibility / SEO Issue: user-scalable=no blocks browser-level text/zoom scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Aether Café | Luxury Roasters</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-content">
-          <!-- Accessibility Violation: Bad heading hierarchy, h4 before h1 -->
-          <h4 class="hero-subtitle">The Art of Extraction</h4>
-          <h1>Elevate Your Daily Ritual</h1>
+<body>
+  <header>
+    <!-- Accessibility Violation: Duplicate ID attribute (violates HTML spec, breaks assistive mapping) -->
+    <span class="logo" id="header-brand-title">Aether Café</span>
+    <nav>
+      <ul>
+        <!-- Accessibility Violation: positive tabindex values disrupting natural keyboard flow -->
+        <li><a href="about.html" tabindex="3">About</a></li>
+        <li><a href="menu.html" tabindex="1">Menu</a></li>
+        <li><a href="index.html" tabindex="2">Home</a></li>
+      </ul>
+    </nav>
+  </header>
 
-          <!-- Accessibility Violation: Very low contrast text -->
-          <p class="hero-desc">
-            Experience single-origin beans roasted to perfection, crafted for
-            those who appreciate the finer notes of life.
-          </p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <!-- Accessibility Violation: Bad heading hierarchy, h4 before h1 -->
+        <h4 class="hero-subtitle">The Art of Extraction</h4>
+        <h1>Elevate Your Daily Ritual</h1>
 
-          <!-- Accessibility Violation: Div acting as button. Fails keyboard navigation and screen reader semantics -->
-          <div class="cta-button" id="explore-btn">Explore Our Roasts</div>
-        </div>
-      </section>
-
-      <!-- Features Section -->
-      <section id="about" class="features">
-        <!-- Accessibility Violation: Skipping to H2 after H1 is correct, but let's look at the structure below -->
-        <h2 class="section-title">Why Aether</h2>
-
-        <div class="grid">
-          <!-- Feature 1 -->
-          <div class="card">
-            <!-- Accessibility Violation: Decorative element or structural icon without alt text/aria-hidden -->
-            <!-- We use inline SVG without title or role -->
-            <div class="card-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path
-                  d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                />
-              </svg>
-            </div>
-            <h3>Ethically Sourced</h3>
-            <p>
-              We work directly with local farmers across Africa and South
-              America to ensure sustainable practices and fair compensation.
-            </p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-                />
-              </svg>
-            </div>
-            <!-- Accessibility Violation: Heading hierarchy skipping levels from H2 to H5 -->
-            <h5>Artisanal Roasting</h5>
-            <p>
-              Our Master Roasters treat roasting as a science, unlocking the
-              distinct micro-climate notes of every harvest.
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="card">
-            <div class="card-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                />
-              </svg>
-            </div>
-            <h3>Precision Brewing</h3>
-            <p>
-              Designed with meticulous attention to temperature, pressure, and
-              extraction time to deliver unmatched clarity.
-            </p>
-          </div>
-        </div>
-
-        <!-- Promo Banner with Contrast Issue and Missing/Vague Alt Image -->
-        <div class="promo-banner">
-          <div class="promo-text">
-            <!-- Accessibility Violation: Low contrast gold badge on light background -->
-            <span class="promo-badge">Limited Batch Release</span>
-            <h2>Geisha Limited Reserve</h2>
-            <p class="promo-desc">
-              Grown in the highlands of Panama, featuring complex floral notes
-              and jasmine aromas.
-            </p>
-
-            <!-- Accessibility Violation: Generic non-descriptive link text -->
-            <p style="margin-top: 1.5rem">
-              <a href="#reserve" style="color: #1a1a1a; font-weight: 600"
-                >Click here</a
-              >
-              to pre-order yours today.
-            </p>
-          </div>
-          <!-- Accessibility Violation: Missing alt attribute completely, or generic alt attribute -->
-          <div class="promo-img">
-            <img
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400"
-              alt="image"
-              style="max-width: 100%; border-radius: 12px; height: auto"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- Newsletter Sign Up -->
-      <section id="menu" class="newsletter">
-        <!-- Accessibility Violation: Misspelled/Invalid ARIA attribute (aria-labelledyby) -->
-        <h2 aria-labelledyby="header-brand-title">Join the Club</h2>
-        <!-- Accessibility Violation: Low contrast text -->
-        <p>
-          Get exclusive access to single-origin drops, private tasting events,
-          and brewing tutorials.
+        <!-- Accessibility Violation: Very low contrast text -->
+        <p class="hero-desc">
+          Experience single-origin beans roasted to perfection, crafted for
+          those who appreciate the finer notes of life.
         </p>
 
-        <div class="form-group">
-          <!-- Accessibility Violation: No <label> element or aria-label for the input, placeholder text has very low contrast -->
-          <input
-            type="text"
-            class="form-input"
-            id="email-field"
-            placeholder="Enter your email address..."
-          />
+        <!-- Accessibility Violation: Div acting as button. Fails keyboard navigation and screen reader semantics -->
+        <div class="cta-button" id="explore-btn">Explore Our Roasts</div>
+      </div>
+    </section>
 
-          <!-- Accessibility Violation: Div acting as submit button. No role, no keyboard support -->
-          <div class="submit-btn" id="subscribe-btn">Subscribe</div>
+    <!-- Features Section -->
+    <section id="about" class="features">
+      <!-- Accessibility Violation: Skipping to H2 after H1 is correct, but let's look at the structure below -->
+      <h2 class="section-title">Why Aether</h2>
+
+      <div class="grid">
+        <!-- Feature 1 -->
+        <div class="card">
+          <!-- Accessibility Violation: Decorative element or structural icon without alt text/aria-hidden -->
+          <!-- We use inline SVG without title or role -->
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <h3>Ethically Sourced</h3>
+          <p>
+            We work directly with local farmers across Africa and South
+            America to ensure sustainable practices and fair compensation.
+          </p>
         </div>
 
-        <!-- Accessibility Violation: Duplicate ID used here again (header-brand-title) -->
-        <div
-          id="header-brand-title"
-          style="
+        <!-- Feature 2 -->
+        <div class="card">
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+            </svg>
+          </div>
+          <!-- Accessibility Violation: Heading hierarchy skipping levels from H2 to H5 -->
+          <h5>Artisanal Roasting</h5>
+          <p>
+            Our Master Roasters treat roasting as a science, unlocking the
+            distinct micro-climate notes of every harvest.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card">
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3>Precision Brewing</h3>
+          <p>
+            Designed with meticulous attention to temperature, pressure, and
+            extraction time to deliver unmatched clarity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Promo Banner with Contrast Issue and Missing/Vague Alt Image -->
+      <div class="promo-banner">
+        <div class="promo-text">
+          <!-- Accessibility Violation: Low contrast gold badge on light background -->
+          <span class="promo-badge">Limited Batch Release</span>
+          <h2>Geisha Limited Reserve</h2>
+          <p class="promo-desc">
+            Grown in the highlands of Panama, featuring complex floral notes
+            and jasmine aromas.
+          </p>
+
+          <!-- Accessibility Violation: Generic non-descriptive link text -->
+          <p style="margin-top: 1.5rem">
+            <a href="#reserve" style="color: #1a1a1a; font-weight: 600">Click here</a>
+            to pre-order yours today.
+          </p>
+        </div>
+        <!-- Accessibility Violation: Missing alt attribute completely, or generic alt attribute -->
+        <div class="promo-img">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="image"
+            style="max-width: 100%; border-radius: 12px; height: auto" />
+        </div>
+      </div>
+
+      <!-- Coffee Plans Section (Rich Content containing contrast and accessibility violations) -->
+      <div
+        style="margin-top: 6rem; padding: 4rem 2rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: 24px;">
+        <!-- Accessibility Violation: Low Contrast Heading -->
+        <h2
+          style="color: #4a515a; font-family: 'Playfair Display', serif; font-size: 2.2rem; text-align: center; margin-bottom: 1rem;">
+          Our Monthly Coffee Subscriptions</h2>
+        <p style="color: #5b626d; text-align: center; max-width: 600px; margin: 0 auto 4rem auto; font-size: 1rem;">
+          Select a curated plan to receive freshly-roasted, single-origin beans straight to your door every single
+          month.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
+          <!-- Plan 1 -->
+          <div
+            style="background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-glass); border-radius: 16px; padding: 2.5rem 2rem; text-align: center;">
+            <span
+              style="color: #6a717d; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600;">The
+              Casual Sipper</span>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 1rem 0;">Explorer Tier</h3>
+            <!-- Accessibility Violation: Low contrast price color -->
+            <div style="font-size: 2.5rem; font-weight: 700; color: #5a6069; margin-bottom: 1.5rem;">$24<span
+                style="font-size: 1rem; color: #3a3f46;">/mo</span></div>
+            <p style="color: #505660; font-size: 0.95rem; margin-bottom: 2rem;">Includes 1 bag (250g) of our rotating
+              seasonal single-origin roast, complete with brewing cards.</p>
+            <!-- Accessibility Violation: Div button without ARIA roles or keyboard accessibility -->
+            <div class="cta-button"
+              style="padding: 0.8rem 2rem; font-size: 0.9rem; background: linear-gradient(135deg, #444 0%, #222 100%); color: #888;">
+              Select Explorer</div>
+          </div>
+
+          <!-- Plan 2 (Featured) -->
+          <div
+            style="background: rgba(212, 175, 55, 0.02); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transform: scale(1.05); position: relative;">
+            <!-- Accessibility Violation: Low Contrast Yellow-on-Dark Badge -->
+            <span
+              style="color: #8b7355; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600; background: rgba(212,175,55,0.05); padding: 4px 12px; border-radius: 20px;">Most
+              Popular</span>
+            <h3
+              style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 1rem 0; color: var(--accent);">
+              Connoisseur Tier</h3>
+            <!-- Accessibility Violation: Low contrast price color -->
+            <div style="font-size: 2.5rem; font-weight: 700; color: #7d6b52; margin-bottom: 1.5rem;">$45<span
+                style="font-size: 1rem; color: #4e4435;">/mo</span></div>
+            <p style="color: #5c554c; font-size: 0.95rem; margin-bottom: 2rem;">Includes 2 bags (500g total) of
+              micro-lot reserve roasts plus exclusive early access to limited edition drops.</p>
+            <!-- Accessibility Violation: Div button -->
+            <div class="cta-button" style="padding: 0.8rem 2rem; font-size: 0.9rem;">Select Connoisseur</div>
+          </div>
+
+          <!-- Plan 3 -->
+          <div
+            style="background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-glass); border-radius: 16px; padding: 2.5rem 2rem; text-align: center;">
+            <span
+              style="color: #6a717d; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600;">The
+              Caffeine Feend</span>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 1rem 0;">Elite Tier</h3>
+            <!-- Accessibility Violation: Low contrast price color -->
+            <div style="font-size: 2.5rem; font-weight: 700; color: #5a6069; margin-bottom: 1.5rem;">$80<span
+                style="font-size: 1rem; color: #3a3f46;">/mo</span></div>
+            <p style="color: #505660; font-size: 0.95rem; margin-bottom: 2rem;">Includes 4 bags (1kg total) curated by
+              our Master Roasters, shipped twice monthly for peak freshness.</p>
+            <!-- Accessibility Violation: Div button -->
+            <div class="cta-button"
+              style="padding: 0.8rem 2rem; font-size: 0.9rem; background: linear-gradient(135deg, #444 0%, #222 100%); color: #888;">
+              Select Elite</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testing Section: Adding a wide variety of accessibility errors -->
+      <div style="margin-top: 6rem; padding: 3rem; background: #121216; border-radius: 20px;">
+        <!-- Accessibility Violation: Duplicate ID attribute (duplicate-id) -->
+        <h2 id="duplicate-id">Test Violations Panel</h2>
+        <p id="duplicate-id" style="color: #444; font-size: 0.9rem;">This section contains specific, testable
+          accessibility issues.</p>
+
+        <!-- Accessibility Violation: Empty heading element -->
+        <h3></h3>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;">
+
+          <!-- Accessibility Violation: Image missing ALT attribute completely -->
+          <div>
+            <h4>Missing Alt Image:</h4>
+            <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200" style="border-radius: 8px;" />
+          </div>
+
+          <!-- Accessibility Violation: Empty Link (Link with image having empty alt, no text) -->
+          <div>
+            <h4>Empty Link:</h4>
+            <a href="/cart.html">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=50" alt="" />
+            </a>
+          </div>
+
+          <!-- Accessibility Violation: Input with Mismatched Label (label 'for' does not match input 'id') -->
+          <div>
+            <h4>Mismatched Form Label:</h4>
+            <label for="incorrect-input-id">Username Input Label</label>
+            <input type="text" id="actual-input-id" class="form-input" style="width: 100%; margin-top: 0.5rem;" />
+          </div>
+
+          <!-- Accessibility Violation: Search input with absolutely no label or aria-label -->
+          <div>
+            <h4>Input with no Label:</h4>
+            <input type="search" class="form-input" placeholder="Search site..." style="width: 100%;" />
+          </div>
+
+          <!-- Accessibility Violation: Invalid ARIA role -->
+          <div>
+            <h4>Invalid ARIA Role:</h4>
+            <div role="super-fancy-button"
+              style="padding: 0.5rem; background: #d4af37; color: #000; text-align: center; border-radius: 4px;">Click
+              Me</div>
+          </div>
+
+          <!-- Accessibility Violation: Orphaned ARIA listitem (no parent list role) -->
+          <div>
+            <h4>Orphaned ARIA Listitem:</h4>
+            <div role="listitem">I am a listitem but have no parent list!</div>
+          </div>
+          <!-- Accessibility Violation: Color Contrast - light grey text on white background & dark grey text on black background -->
+          <div>
+            <h4>Extreme Color Contrast Violations:</h4>
+            <div
+              style="background-color: #ffffff !important; color: #eaeaea !important; padding: 20px; font-size: 18px; display: block !important; visibility: visible !important; min-height: 50px;">
+              This text is light gray on a white background (highly illegal contrast ratio).
+            </div>
+            <div
+              style="background-color: #121212 !important; color: #1a1a1a !important; padding: 20px; font-size: 18px; display: block !important; visibility: visible !important; min-height: 50px; margin-top: 10px;">
+              This text is dark gray on a near-black background (highly illegal contrast ratio).
+            </div>
+            <!-- More color contrast violations to make it large -->
+            <div style="background-color: #f0f0f0; color: #d0d0d0; padding: 10px; margin-top: 10px;">
+              Contrast violation 3: Light gray on gray
+            </div>
+            <div style="background-color: #222222; color: #444444; padding: 10px; margin-top: 10px;">
+              Contrast violation 4: Dark gray on dark gray
+            </div>
+          </div>
+
+          <!-- Accessibility Violation: Ensure aria-hidden Elements Are Not Focusable or Contain Focusable Elements -->
+          <div>
+            <h4>Focusable Elements Inside aria-hidden:</h4>
+            <div aria-hidden="true" style="border: 1px dashed red; padding: 1rem;">
+              <p>This container is hidden from screen readers, but contains focusable elements:</p>
+              <a href="#hidden-link-1" style="color: var(--accent); margin-right: 15px;">Focusable Link 1</a>
+              <a href="#hidden-link-2" style="color: var(--accent); margin-right: 15px;">Focusable Link 2</a>
+              <button style="margin-right: 15px;">Focusable Button</button>
+              <input type="text" placeholder="Focusable Input" />
+            </div>
+          </div>
+
+          <!-- Accessibility Violation: Ensure ARIA Reference Attributes Point to Valid Elements -->
+          <div>
+            <h4>ARIA References Pointing to Invalid Elements:</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <div aria-labelledby="non-existent-header-1">This text claims to be labelled by a non-existent element.
+              </div>
+              <div aria-describedby="missing-description-id-1">This element points to a missing description.</div>
+              <div aria-owns="missing-child-element-id">This element owns a non-existent child.</div>
+              <button aria-controls="non-existent-tab-content">Tab Toggle (pointing to missing controls target)</button>
+            </div>
+          </div>
+
+          <!-- Accessibility Violation: Ensure Every ID Used by ARIA and Labels Is Unique (Duplicate IDs) -->
+          <div>
+            <h4>Duplicate IDs:</h4>
+            <p>Three inputs sharing the exact same ID "duplicate-input-field":</p>
+            <input type="text" id="duplicate-input-field" placeholder="First duplicate ID field" class="form-input"
+              style="width: 100%; margin-bottom: 5px;" />
+            <input type="text" id="duplicate-input-field" placeholder="Second duplicate ID field" class="form-input"
+              style="width: 100%; margin-bottom: 5px;" />
+            <input type="text" id="duplicate-input-field" placeholder="Third duplicate ID field" class="form-input"
+              style="width: 100%;" />
+
+            <p style="margin-top: 10px;">Two labels sharing the same ID "duplicate-label-id":</p>
+            <span id="duplicate-label-id">Label Reference A</span>
+            <span id="duplicate-label-id">Label Reference B</span>
+          </div>
+
+          <!-- Accessibility Violation: Ensure Section Elements Have Descriptive Headings -->
+          <section id="violating-section-1" style="border: 1px solid #333; padding: 1.5rem; border-radius: 8px;">
+            <!-- Section has no heading element at all -->
+            <p>This is a section element (Section 1) that does not contain any heading (h1-h6) element.</p>
+          </section>
+
+          <section id="violating-section-2"
+            style="border: 1px solid #333; padding: 1.5rem; border-radius: 8px; margin-top: 10px;">
+            <!-- Section contains an empty heading element -->
+            <h4></h4>
+            <p>This is a section element (Section 2) that contains an empty heading element.</p>
+          </section>
+
+          <!-- Accessibility Violation: Ensure the Page Uses a Single <h1> Element (Adding a second H1) -->
+          <div>
+            <h4>Multiple H1 Elements:</h4>
+            <h1 style="font-size: 1.5rem; color: red;">Accessibility Violation: This is the Second H1 Element on this
+              Page!</h1>
+          </div>
+
+          <!-- Accessibility Violation: Ensure Form Fields Have Accessible Labels -->
+          <div>
+            <h4>Form Fields Lacking Accessible Labels:</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <input type="text" id="no-label-1" class="form-input" placeholder="No label or aria-label here" />
+              <input type="password" id="no-label-2" class="form-input" placeholder="Another unlabeled field" />
+              <textarea id="no-label-3" class="form-input" placeholder="Unlabeled textarea"></textarea>
+            </div>
+          </div>
+
+          <!-- Accessibility Violation: Ensure Submit and Reset Buttons Have Descriptive Labels -->
+          <div>
+            <h4>Submit & Reset Buttons Lacking Labels:</h4>
+            <div style="display: flex; gap: 1rem;">
+              <input type="submit" value="" style="width: 100px; height: 35px;" />
+              <input type="reset" value="" style="width: 100px; height: 35px;" />
+              <button type="submit" style="width: 100px; height: 35px;"></button>
+              <button type="reset" style="width: 100px; height: 35px;"></button>
+            </div>
+          </div>
+
+          <!-- Accessibility Violation: Ensure Form Validation States Are Programmatically Exposed -->
+          <div>
+            <h4>Form Validation States Not Programmatically Exposed:</h4>
+            <div style="border: 1px solid red; padding: 1rem; border-radius: 8px;">
+              <label for="validation-input-field">Billing Zip Code</label>
+              <!-- Input has validation error styling (red border) and message, but misses aria-invalid="true" -->
+              <input type="text" id="validation-input-field" class="form-input"
+                style="border: 2px solid red; width: 100%; margin-top: 0.5rem;" value="ABCDE" />
+              <span style="color: red; font-size: 0.85rem; display: block; margin-top: 5px;">Error: Zip code must
+                contain only numbers.</span>
+            </div>
+          </div>
+
+          <!-- Accessibility Violation: Invalid ARIA attribute values and non-existent controls targets -->
+          <div>
+            <h4>Invalid ARIA Attributes:</h4>
+            <button aria-controls="missing-dropdown-element" aria-expanded="sometimes-yes"
+              style="padding: 0.5rem 1rem; background: var(--bg-card); color: #fff; border: 1px solid var(--border-glass);">Toggle
+              Menu</button>
+          </div>
+
+          <!-- Accessibility Violation: Deprecated / non-accessible tag (Marquee) -->
+          <div>
+            <h4>Deprecated/Inaccessible Tag:</h4>
+            <marquee scrollamount="3" style="color: var(--accent); font-weight: 700;">Special beans landing tomorrow!
+              Limited inventory available!</marquee>
+          </div>
+
+          <!-- Container that is initially empty in the HTML to test dynamic elements (before/after code block not showing) -->
+          <div>
+            <h4>Dynamically Injected Color Contrast Error Container:</h4>
+            <div id="dynamic-contrast-container"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Dynamically inject the element after page load to reproduce the code snippet view bug
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const container = document.getElementById('dynamic-contrast-container');
+          if (container) {
+            const errorElement = document.createElement('div');
+            // Unique ID that the scanner will target
+            errorElement.id = 'js-injected-contrast-error';
+
+            // Pure white background with almost white text (Critical Contrast Violation)
+            errorElement.style.backgroundColor = '#FFFFFF';
+            errorElement.style.color = '#F5F5F5';
+            errorElement.style.padding = '15px';
+            errorElement.innerText = 'I am dynamically injected with bad contrast!';
+
+            container.appendChild(errorElement);
+          }
+        }, 2000); // 2 second delay
+      });
+    </script>
+
+    <!-- Newsletter Sign Up -->
+    <section id="menu" class="newsletter">
+      <!-- Accessibility Violation: Misspelled/Invalid ARIA attribute (aria-labelledyby) -->
+      <h2 aria-labelledyby="header-brand-title">Join the Club</h2>
+      <!-- Accessibility Violation: Low contrast text -->
+      <p>
+        Get exclusive access to single-origin drops, private tasting events,
+        and brewing tutorials.
+      </p>
+
+      <div class="form-group">
+        <!-- Accessibility Violation: No <label> element or aria-label for the input, placeholder text has very low contrast -->
+        <input type="text" class="form-input" id="email-field" placeholder="Enter your email address..." />
+
+        <!-- Accessibility Violation: Div acting as submit button. No role, no keyboard support -->
+        <div class="submit-btn" id="subscribe-btn">Subscribe</div>
+      </div>
+
+      <!-- Accessibility Violation: Duplicate ID used here again (header-brand-title) -->
+      <div id="header-brand-title" style="
             margin-top: 1.5rem;
             color: #ebd076;
             font-size: 0.95rem;
             display: none;
-          "
-        ></div>
-      </section>
-    </main>
+          "></div>
+    </section>
+  </main>
 
-    <footer>
-      <div class="footer-links">
-        <!-- Accessibility Violation: Non-descriptive links -->
-        <a href="#privacy">Read more</a>
-        <a href="#terms">Go</a>
-        <a href="#contact">Click here</a>
-      </div>
-      <p class="copyright">
-        &copy; 2026 Aether Café Roasters. All rights reserved.
-      </p>
-    </footer>
+  <footer>
+    <div class="footer-links">
+      <!-- Accessibility Violation: Non-descriptive links -->
+      <a href="#privacy">Read more</a>
+      <a href="#terms">Go</a>
+      <a href="#contact">Click here</a>
+    </div>
+    <p class="copyright">
+      &copy; 2026 Aether Café Roasters. All rights reserved.
+    </p>
+  </footer>
 
-    <script
-      src="./test-live/injector.js"
-      type="module"
-      data-account="mrsy5ioi8r"
-    ></script>
-    <script src="app.js"></script>
-  </body>
+  <script src="https://staging-widget.braoza.com/v1/assets/static-pages/injector.js" type="module"
+    data-account="mrukew3nz0"></script>
+  <script src="app.js"></script>
+</body>
+
 </html>

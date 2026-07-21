@@ -1,0 +1,112 @@
+<!-- Accessibility Violation: Incorrect or invalid lang attribute -->
+<html lang="zxx-invalid-code">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Accessibility / SEO Issue: user-scalable=no blocks browser-level text/zoom scaling -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Our Menu | Aether Café</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Accessibility Violation: Duplicate ID attribute -->
+      <span class="logo" id="header-brand-title">Aether Café</span>
+      <nav>
+        <ul>
+          <!-- Accessibility Violation: positive tabindex values disrupting natural keyboard flow -->
+          <li><a href="index.html" tabindex="3">Home</a></li>
+          <li><a href="about.html" tabindex="1">About</a></li>
+          <li><a href="menu.html" tabindex="2">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="min-height: 50vh; background: radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);">
+        <div class="hero-content">
+          <!-- Accessibility Violation: Bad heading hierarchy -->
+          <h4 class="hero-subtitle">Curated Offerings</h4>
+          <h1>The Menu Selection</h1>
+          <!-- Accessibility Violation: Very low contrast text color -->
+          <p class="hero-desc">
+            Explore our rotating selection of single-origin pour overs, slow-drip cold brews, and signature espresso beverages.
+          </p>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2 class="section-title">Espresso & Pour Overs</h2>
+        <div class="grid">
+          <!-- Item 1 -->
+          <div class="card">
+            <!-- Accessibility Violation: Low contrast tag on dark background card -->
+            <span style="color: #4a525d; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Panama Origin</span>
+            <h3>Signature Geisha Espresso</h3>
+            <!-- Accessibility Violation: Low Contrast text -->
+            <p>Bright jasmine florals with hints of orange blossom, bergamot, and a sweet honey finish.</p>
+            <span style="display: block; margin-top: 1rem; color: var(--accent); font-weight: 600;">$9.00</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="card">
+            <span style="color: #4a525d; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Ethiopia Yirgacheffe</span>
+            <h3>Cold Drip Infusion</h3>
+            <!-- Accessibility Violation: Low Contrast text -->
+            <p>12-hour slow extraction capturing delicate notes of blueberry, peach, and black tea.</p>
+            <span style="display: block; margin-top: 1rem; color: var(--accent); font-weight: 600;">$7.50</span>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="card">
+            <span style="color: #4a525d; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Honduras Organic</span>
+            <h3>Aether Macchiato</h3>
+            <!-- Accessibility Violation: Low Contrast text -->
+            <p>Double shot espresso with silky micro-foam, finished with organic cardamom-infused honey.</p>
+            <span style="display: block; margin-top: 1rem; color: var(--accent); font-weight: 600;">$6.00</span>
+          </div>
+        </div>
+
+        <!-- Light Promo Banner with yellow-on-white/light contrast issue -->
+        <div class="promo-banner">
+          <div class="promo-text">
+            <!-- Accessibility Violation: Gold text on light grey background failing WCAG AA (requires 4.5:1) -->
+            <span class="promo-badge" style="color: var(--text-gold-low);">Chef's Tasting Menu</span>
+            <h2>The Espresso Flight</h2>
+            <p class="promo-desc">Compare three distinct origins side-by-side, guided by our head barista.</p>
+            <p style="margin-top: 1.5rem">
+              <!-- Accessibility Violation: Non-descriptive link -->
+              <a href="#book" style="color: #1a1a1a; font-weight: 600">Click here</a> to reserve a seat.
+            </p>
+          </div>
+          <div class="promo-img">
+            <!-- Accessibility Violation: Missing alt attribute -->
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400" alt="image" style="max-width: 100%; border-radius: 12px; height: auto;" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <!-- Accessibility Violation: Non-descriptive links -->
+        <a href="#privacy">Read more</a>
+        <a href="#terms">Go</a>
+        <a href="#contact">Click here</a>
+      </div>
+      <p class="copyright">
+        &copy; 2026 Aether Café Roasters. All rights reserved.
+      </p>
+    </footer>
+
+    <script
+      src="http://127.0.0.1:5500/injector.js"
+      type="module"
+      data-account="mrt34cl0ba"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
