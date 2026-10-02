@@ -465,6 +465,10 @@
       style="padding:6px 10px;border-radius:8px;background:#e11d48;color:#fff;border:none;font-size:12px;cursor:pointer;">Close
       widget</button>
     <button
+      onclick="window.Custama.open({welcome_msg:'Hi! I see you are asking about your appointment — how can I help?',patientName:'Jane Doe',appointmentType:'Cardiology follow-up',appointmentDate:'2026-10-15',clinic:'Aether Health Clinic'})"
+      style="padding:6px 10px;border-radius:8px;background:#0d9488;color:#fff;border:none;font-size:12px;cursor:pointer;">Open
+      + set context</button>
+    <button
       onclick="window.Custama.setContext({welcome_msg:'Hi! I see you are asking about order A-1042 — how can I help?',orderId:'A-1042',status:'shipped',total:'12800'})"
       style="padding:6px 10px;border-radius:8px;background:#2563eb;color:#fff;border:none;font-size:12px;cursor:pointer;">Set
       context (order)</button>
