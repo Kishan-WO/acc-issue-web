@@ -448,6 +448,34 @@
   <script src="https://staging-widget.braoza.com/v1/assets/static-pages/injector.js" type="module"
     data-account="mrukew3nz0"></script>
   <script src="app.js"></script>
+
+  <!-- Custama widget: queue stub (must run before the module script below) -->
+  <script>
+    !function(){var q=(window.Custama&&window.Custama.q)||[];window.Custama=window.Custama||new Proxy({q:q},{get:function(target,prop){if(prop in target)return target[prop];return function(){q.push([prop,arguments]);}}});}();
+  </script>
+  <script data-bot-id="mjwh09lceq"
+    src="https://staging-widget.custama.com/scripts/injector.js?chatbotKey=mjwh09lceq" type="module"></script>
+
+  <!-- Custama test panel: open/close, set/clear context, for testing queueing -->
+  <div style="position:fixed;bottom:16px;left:16px;z-index:999999;display:flex;flex-direction:column;gap:8px;">
+    <button onclick="window.Custama.open()"
+      style="padding:6px 10px;border-radius:8px;background:#059669;color:#fff;border:none;font-size:12px;cursor:pointer;">Open
+      widget</button>
+    <button onclick="window.Custama.close()"
+      style="padding:6px 10px;border-radius:8px;background:#e11d48;color:#fff;border:none;font-size:12px;cursor:pointer;">Close
+      widget</button>
+    <button
+      onclick="window.Custama.setContext({welcome_msg:'Hi! I see you are asking about order A-1042 — how can I help?',orderId:'A-1042',status:'shipped',total:'12800'})"
+      style="padding:6px 10px;border-radius:8px;background:#2563eb;color:#fff;border:none;font-size:12px;cursor:pointer;">Set
+      context (order)</button>
+    <button
+      onclick="window.Custama.setContext({welcome_msg:'Looks like you are now on the billing page — want help with your subscription?',planName:'Pro Plan',billingCycle:'monthly',nextRenewalDate:'2026-11-05'})"
+      style="padding:6px 10px;border-radius:8px;background:#4f46e5;color:#fff;border:none;font-size:12px;cursor:pointer;">Set
+      context (billing)</button>
+    <button onclick="window.Custama.clearContext()"
+      style="padding:6px 10px;border-radius:8px;background:#d97706;color:#fff;border:none;font-size:12px;cursor:pointer;">Clear
+      context</button>
+  </div>
 </body>
 
 </html>
